@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "6e64bfce-cb51-4f0c-bacc-5f9600555803",
+		"name": "DataSnapISAPIServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Default",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EchoString",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/EchoString/GlerystonMatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"EchoString",
+						"GlerystonMatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReverseString",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/ReverseString/GlerystonMatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"ReverseString",
+						"GlerystonMatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Add/10/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"Add",
+						"10",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
