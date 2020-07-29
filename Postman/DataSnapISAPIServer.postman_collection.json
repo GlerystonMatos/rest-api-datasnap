@@ -27,6 +27,27 @@
 		},
 		{
 			"name": "EchoString",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "789819e9-783a-4b9f-98a7-95ea3c112282",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -76,12 +97,12 @@
 			"response": []
 		},
 		{
-			"name": "Add",
+			"name": "Soma",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Add/10/20",
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Soma/10/20",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -93,9 +114,110 @@
 						"DataSnap",
 						"Rest",
 						"TServerMethods",
-						"Add",
+						"Soma",
 						"10",
 						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario/Gleryston/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"Usuario",
+						"Gleryston",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario/Gleryston/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"Usuario",
+						"Gleryston",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario/Gleryston",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"Usuario",
+						"Gleryston"
 					]
 				}
 			},

@@ -7,6 +7,7 @@ object WebModuleServer: TWebModuleServer
       PathInfo = '/'
       OnAction = WebModuleServerDefaultHandlerAction
     end>
+  AfterDispatch = WebModuleAfterDispatch
   Height = 129
   Width = 181
   object DSServer: TDSServer

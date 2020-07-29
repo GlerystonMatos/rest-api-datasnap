@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C49220AC-56CA-4C02-9536-37BA8040F45F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DataSnapISAPIServer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DataSnapISAPIServer">
+        <MSBuild Projects="DataSnapISAPIServer.dproj"/>
+    </Target>
+    <Target Name="DataSnapISAPIServer:Clean">
+        <MSBuild Projects="DataSnapISAPIServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DataSnapISAPIServer:Make">
+        <MSBuild Projects="DataSnapISAPIServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DataSnapISAPIServer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DataSnapISAPIServer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DataSnapISAPIServer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

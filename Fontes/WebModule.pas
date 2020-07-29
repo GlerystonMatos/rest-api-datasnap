@@ -13,6 +13,7 @@ type
     DSServerClass: TDSServerClass;
     procedure DSServerClassGetClass(DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
     procedure WebModuleServerDefaultHandlerAction(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+    procedure WebModuleAfterDispatch(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
   private
     { Private declarations }
   public
@@ -21,6 +22,7 @@ type
 
 var
   WebModuleClass: TComponentClass = TWebModuleServer;
+  ContentType :string = 'application/json';
 
 implementation
 
@@ -29,12 +31,22 @@ implementation
 uses
   ServerMethods, Web.WebReq;
 
+procedure TWebModuleServer.WebModuleAfterDispatch(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+begin
+  Response.ContentType := AnsiString(ContentType);
+end;
+
 procedure TWebModuleServer.WebModuleServerDefaultHandlerAction(Sender: TObject; Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 begin
+  ContentType := 'text/html';
   Response.Content :=
     '<html>' +
-    '<head><title>DataSnap Server</title></head>' +
-    '<body>DataSnap Server</body>' +
+      '<head>' +
+        '<title>DataSnap Server</title>' +
+      '</head>' +
+      '<body>' +
+        'DataSnap Server' +
+      '</body>' +
     '</html>';
 end;
 
