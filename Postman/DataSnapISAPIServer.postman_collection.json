@@ -26,6 +26,96 @@
 			"response": []
 		},
 		{
+			"name": "HelloWorld",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c93f6c4-11cb-4743-9edb-ef319350d2b8",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/HelloWorld",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"HelloWorld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerTime",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b120f9fd-b27c-468b-9e39-6e9ac289c75f",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/ServerTime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"DataSnapISAPIServer",
+						"DataSnapISAPIServer.dll",
+						"DataSnap",
+						"Rest",
+						"TServerMethods",
+						"ServerTime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "EchoString",
 			"event": [
 				{
@@ -52,7 +142,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/EchoString/GlerystonMatos",
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/EchoString/Gleryston Matos",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -65,7 +155,7 @@
 						"Rest",
 						"TServerMethods",
 						"EchoString",
-						"GlerystonMatos"
+						"Gleryston Matos"
 					]
 				}
 			},
@@ -73,6 +163,27 @@
 		},
 		{
 			"name": "ReverseString",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7dcd1c4e-011f-420a-b97d-b5e793f85d1a",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -98,6 +209,27 @@
 		},
 		{
 			"name": "Soma",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "77dc19d8-56aa-4127-b9ca-ec1ec8af8e9c",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -124,6 +256,27 @@
 		},
 		{
 			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8328cdd1-02c9-42ca-9be0-a747bf0282f4",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -148,6 +301,27 @@
 		},
 		{
 			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d54a3240-b04d-4438-a597-55d7032838ce",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -174,6 +348,27 @@
 		},
 		{
 			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e988c2c0-9120-4a6a-b228-f239b0a99b2a",
+						"exec": [
+							"tests[\"status é igual a 201\"] = responseCode.code === 201;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -200,6 +395,27 @@
 		},
 		{
 			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "870859ab-f5d8-4301-9f1d-6e61c84116c0",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],

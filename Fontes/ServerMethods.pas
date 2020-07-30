@@ -11,9 +11,11 @@ type
   private
     procedure ConfigurarReader;
   public
-    function EchoString(Value: string): string;
-    function ReverseString(Value: string): string;
-    function Soma(Value01: Integer; Value02: Integer): Integer;
+    function HelloWorld: TJSONObject;
+    function ServerTime: TJSONObject;
+    function EchoString(Value: string): TJSONObject;
+    function ReverseString(Value: string): TJSONObject;
+    function Soma(Value01: Integer; Value02: Integer): TJSONObject;
     function Usuario: TJSONArray; //Get = Select
     function AcceptUsuario(const aNome, aSenha: string): TJSONObject; //Put = Update
     function UpdateUsuario(const aNome, aSenha: string): TJSONObject; //Post = Insert
@@ -31,22 +33,54 @@ begin
   ContentType := 'application/json';
 end;
 
-function TServerMethods.Soma(Value01, Value02: Integer): Integer;
+function TServerMethods.HelloWorld: TJSONObject;
+var
+  objeto: TJSONObject;
 begin
   ConfigurarReader;
-  Result := Value01 + Value02;
+  objeto := TJSONObject.Create;
+  objeto.AddPair(TJSONPair.Create('result', 'Hello World'));
+  Result := objeto;
 end;
 
-function TServerMethods.EchoString(Value: string): string;
+function TServerMethods.ServerTime: TJSONObject;
+var
+  objeto: TJSONObject;
 begin
   ConfigurarReader;
-  Result := Value;
+  objeto := TJSONObject.Create;
+  objeto.AddPair(TJSONPair.Create('result', FormatDateTime('dd-mm-yyyy hh:mm:ss', Now)));
+  Result := objeto;
 end;
 
-function TServerMethods.ReverseString(Value: string): string;
+function TServerMethods.EchoString(Value: string): TJSONObject;
+var
+  objeto: TJSONObject;
 begin
   ConfigurarReader;
-  Result := System.StrUtils.ReverseString(Value);
+  objeto := TJSONObject.Create;
+  objeto.AddPair(TJSONPair.Create('result', Value));
+  Result := objeto;
+end;
+
+function TServerMethods.ReverseString(Value: string): TJSONObject;
+var
+  objeto: TJSONObject;
+begin
+  ConfigurarReader;
+  objeto := TJSONObject.Create;
+  objeto.AddPair(TJSONPair.Create('result', System.StrUtils.ReverseString(Value)));
+  Result := objeto;
+end;
+
+function TServerMethods.Soma(Value01, Value02: Integer): TJSONObject;
+var
+  objeto: TJSONObject;
+begin
+  ConfigurarReader;
+  objeto := TJSONObject.Create;
+  objeto.AddPair(TJSONPair.Create('result', IntToStr((Value01 + Value02))));
+  Result := objeto;
 end;
 
 function TServerMethods.Usuario: TJSONArray;
@@ -107,7 +141,7 @@ var
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário excluído com sucesso'));
+  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário ' + aNome + ' excluído com sucesso'));
   Result := objeto;
 end;
 
