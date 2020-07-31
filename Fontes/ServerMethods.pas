@@ -17,8 +17,8 @@ type
     function ReverseString(Value: string): TJSONObject;
     function Soma(Value01: Integer; Value02: Integer): TJSONObject;
     function Usuario: TJSONArray; //Get = Select
-    function AcceptUsuario(const aNome, aSenha: string): TJSONObject; //Put = Update
-    function UpdateUsuario(const aNome, aSenha: string): TJSONObject; //Post = Insert
+    function AcceptUsuario(const usuario: TJSONObject): TJSONObject; //Put = Update
+    function UpdateUsuario(const usuario: TJSONObject): TJSONObject; //Post = Insert
     function CancelUsuario(const aNome: string): TJSONObject; //Delete = Delete
   end;
 {$METHODINFO OFF}
@@ -111,26 +111,30 @@ begin
   Result := lista;
 end;
 
-function TServerMethods.AcceptUsuario(const aNome, aSenha: string): TJSONObject;
+function TServerMethods.AcceptUsuario(const usuario: TJSONObject): TJSONObject;
 var
   objeto: TJSONObject;
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('nome', aNome));
-  objeto.AddPair(TJSONPair.Create('senha', aSenha));
+  if (not usuario.GetValue('nome').Null) then
+    objeto.AddPair(TJSONPair.Create('nome', usuario.GetValue('nome').value));
+  if (not usuario.GetValue('senha').Null) then
+    objeto.AddPair(TJSONPair.Create('senha', usuario.GetValue('senha').value));
   objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário atualizado com sucesso'));
   Result := objeto;
 end;
 
-function TServerMethods.UpdateUsuario(const aNome, aSenha: string): TJSONObject;
+function TServerMethods.UpdateUsuario(const usuario: TJSONObject): TJSONObject;
 var
   objeto: TJSONObject;
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('nome', aNome));
-  objeto.AddPair(TJSONPair.Create('senha', aSenha));
+  if (not usuario.GetValue('nome').Null) then
+    objeto.AddPair(TJSONPair.Create('nome', usuario.GetValue('nome').value));
+  if (not usuario.GetValue('senha').Null) then
+    objeto.AddPair(TJSONPair.Create('senha', usuario.GetValue('senha').value));
   objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário criado com sucesso'));
   Result := objeto;
 end;

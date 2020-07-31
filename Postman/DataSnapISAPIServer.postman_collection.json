@@ -325,8 +325,17 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gleryston\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario/Gleryston/123",
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -338,9 +347,7 @@
 						"DataSnap",
 						"Rest",
 						"TServerMethods",
-						"Usuario",
-						"Gleryston",
-						"123"
+						"Usuario"
 					]
 				}
 			},
@@ -372,8 +379,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gleryston\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario/Gleryston/123",
+					"raw": "http://localhost:8083/DataSnapISAPIServer/DataSnapISAPIServer.dll/DataSnap/Rest/TServerMethods/Usuario",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -385,9 +401,7 @@
 						"DataSnap",
 						"Rest",
 						"TServerMethods",
-						"Usuario",
-						"Gleryston",
-						"123"
+						"Usuario"
 					]
 				}
 			},
