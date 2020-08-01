@@ -40,12 +40,15 @@ procedure TWebModuleServer.WebModuleServerDefaultHandlerAction(Sender: TObject; 
 begin
   ContentType := 'text/html';
   Response.Content :=
+    '<!DOCTYPE html>' +
     '<html>' +
       '<head>' +
-        '<title>DataSnap Server</title>' +
+        '<meta charset="UTF-8" />' +
+        '<title>DataSnap</title>' +
       '</head>' +
       '<body>' +
-        'DataSnap Server' +
+        '<h1>DataSnap</h1>' +
+        '<h2>Server Status - Online</h2>' +
       '</body>' +
     '</html>';
 end;
