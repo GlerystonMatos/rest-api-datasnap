@@ -3,7 +3,7 @@
         <ProjectGuid>{94FEEE1F-A134-4F7A-B750-18EED017D3C7}</ProjectGuid>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
-        <MainSource>DataSnapISAPIServer.dpr</MainSource>
+        <MainSource>ISAPI.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -39,16 +39,22 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <SanitizedProjectName>DataSnapISAPIServer</SanitizedProjectName>
+        <SanitizedProjectName>ISAPI</SanitizedProjectName>
         <GenDll>true</GenDll>
         <VerInfo_Locale>1046</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>C:\inetpub\Isapi\DataSnapISAPIServer\</DCC_ExeOutput>
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -56,11 +62,11 @@
         <DCC_K>false</DCC_K>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
         <DCC_UsePackage>dxPSLnksRS20;cxGridRS20;dxPSdxLCLnkRS20;dxPScxExtCommonRS20;FireDACSqliteDriver;FireDACDSDriver;cxPageControlRS20;DBXSqliteDriver;FireDACPgDriver;fmx;BaseBBoxD20;IndySystem;DCEF_XE6;TeeDB;tethering;inetdbbde;vclib;DBXInterBaseDriver;DataSnapClient;XMLBBoxD20;DataSnapServer;DataSnapCommon;DataSnapProviderClient;DBXSybaseASEDriver;DbxCommonDriver;dxLayoutControlRS20;vclimg;dbxcds;DatasnapConnectorsFreePascal;MetropolisUILiveTile;dxPScxSchedulerLnkRS20;dxPSCoreRS20;vcldb;vcldsnap;dxPSTeeChartRS20;RemProt_XE6;fmxFireDAC;DLibWinDXE6_Vcl;DBXDb2Driver;madSecurity_;DBXOracleDriver;CustomIPTransport;cxExportRS20;vclribbon;dxServerModeRS20;dsnap;IndyIPServer;IndyCore;vcl;fmxase;RLibWinDXE6;dxComnRS20;DBXMSSQLDriver;IndyIPCommon;CloudService;FmxTeeUI;FireDACIBDriver;CodeSiteExpressPkg;dxDBXServerModeRS20;DataSnapFireDAC;FireDACDBXDriver;soapserver;dxPScxGridLnkRS20;dxPSDBTeeChartRS20;inetdbxpress;cxSchedulerGridRS20;dxADOServerModeRS20;dsnapxml;FireDACInfxDriver;FireDACDb2Driver;adortl;SSLBBoxCliD20;madBasic_;FireDACASADriver;bindcompfmx;VeicaLib;vcldbx;FireDACODBCDriver;RESTBackendComponents;madKernel_;rtl;dbrtl;DbxClientDriver;FireDACCommon;bindcomp;inetdb;Tee;DBXOdbcDriver;vclFireDAC;madDisAsm_;RESTDWDriverFD;xmlrtl;DataSnapNativeClient;svnui;ibxpress;cxSpreadSheetRS20;madShell_;XMLBBoxSecD20;IndyProtocols;DBXMySQLDriver;dxPScxCommonRS20;dxPScxSSLnkRS20;SSLBBoxCliIndy10D20;FireDACCommonDriver;vclactnband;bindengine;bindcompdbx;soaprtl;FMXTee;dxGDIPlusRS20;bindcompvcl;TeeUI;vclie;madExcept_;cxSchedulerRS20;FireDACADSDriver;vcltouch;cxEditorsRS20;LibDelphiXE6;VclSmp;FireDACMSSQLDriver;FireDAC;DBXInformixDriver;Intraweb;PGPBBoxD20;VCLRESTComponents;DataSnapConnectors;DataSnapServerMidas;dsnapcon;DBXFirebirdDriver;inet;cxLibraryRS20;cxDataRS20;fmxobj;FireDACMySQLDriver;soapmidas;vclx;dxCoreRS20;DBXSybaseASADriver;svn;FireDACOracleDriver;fmxdae;RESTComponents;RestDatawareCORE;bdertl;dxThemeRS20;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>FireDACSqliteDriver;FireDACDSDriver;DBXSqliteDriver;FireDACPgDriver;fmx;BaseBBoxD20;IndySystem;TeeDB;tethering;vclib;DBXInterBaseDriver;DataSnapClient;XMLBBoxD20;DataSnapServer;DataSnapCommon;DataSnapProviderClient;DBXSybaseASEDriver;DbxCommonDriver;vclimg;dbxcds;DatasnapConnectorsFreePascal;MetropolisUILiveTile;vcldb;vcldsnap;fmxFireDAC;DBXDb2Driver;DBXOracleDriver;CustomIPTransport;vclribbon;dsnap;IndyIPServer;IndyCore;vcl;fmxase;DBXMSSQLDriver;IndyIPCommon;CloudService;FmxTeeUI;FireDACIBDriver;DataSnapFireDAC;FireDACDBXDriver;soapserver;inetdbxpress;dsnapxml;FireDACInfxDriver;FireDACDb2Driver;adortl;SSLBBoxCliD20;FireDACASADriver;bindcompfmx;FireDACODBCDriver;RESTBackendComponents;rtl;dbrtl;DbxClientDriver;FireDACCommon;bindcomp;inetdb;Tee;DBXOdbcDriver;vclFireDAC;RESTDWDriverFD;xmlrtl;DataSnapNativeClient;ibxpress;XMLBBoxSecD20;IndyProtocols;DBXMySQLDriver;SSLBBoxCliIndy10D20;FireDACCommonDriver;vclactnband;bindengine;bindcompdbx;soaprtl;FMXTee;bindcompvcl;TeeUI;vclie;FireDACADSDriver;vcltouch;VclSmp;FireDACMSSQLDriver;FireDAC;DBXInformixDriver;Intraweb;PGPBBoxD20;VCLRESTComponents;DataSnapConnectors;DataSnapServerMidas;dsnapcon;DBXFirebirdDriver;inet;fmxobj;FireDACMySQLDriver;soapmidas;vclx;DBXSybaseASADriver;FireDACOracleDriver;fmxdae;RESTComponents;RestDatawareCORE;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
@@ -74,6 +80,7 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>None</Manifest_File>
@@ -84,6 +91,10 @@
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -113,13 +124,9 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">DataSnapISAPIServer.dpr</Source>
+                    <Source Name="MainSource">ISAPI.dpr</Source>
                 </Source>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Projetos\FortesLib\dcldxmdsRS20.bpl">ExpressMemData by Developer Express Inc.</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                </Excluded_Packages>
+                <Excluded_Packages/>
             </Delphi.Personality>
             <Deployment/>
             <Platforms>

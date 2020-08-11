@@ -1,4 +1,4 @@
-library DataSnapISAPIServer;
+library ISAPI;
 
 uses
   Winapi.ActiveX,

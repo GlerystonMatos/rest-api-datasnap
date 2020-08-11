@@ -1,9 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{C49220AC-56CA-4C02-9536-37BA8040F45F}</ProjectGuid>
+        <ProjectGuid>{12DA4405-777C-41CC-B440-0CDBE3602224}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="DataSnapISAPIServer.dproj">
+        <Projects Include="ISAPI.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -14,23 +14,23 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="DataSnapISAPIServer">
-        <MSBuild Projects="DataSnapISAPIServer.dproj"/>
+    <Target Name="ISAPI">
+        <MSBuild Projects="ISAPI.dproj"/>
     </Target>
-    <Target Name="DataSnapISAPIServer:Clean">
-        <MSBuild Projects="DataSnapISAPIServer.dproj" Targets="Clean"/>
+    <Target Name="ISAPI:Clean">
+        <MSBuild Projects="ISAPI.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="DataSnapISAPIServer:Make">
-        <MSBuild Projects="DataSnapISAPIServer.dproj" Targets="Make"/>
+    <Target Name="ISAPI:Make">
+        <MSBuild Projects="ISAPI.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="DataSnapISAPIServer"/>
+        <CallTarget Targets="ISAPI"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="DataSnapISAPIServer:Clean"/>
+        <CallTarget Targets="ISAPI:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="DataSnapISAPIServer:Make"/>
+        <CallTarget Targets="ISAPI:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "395b9518-9268-4d5a-a87b-8630cbe51d80",
+		"name": "rest-api-delphi-datasnap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Default",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c18b739-4c44-4a43-9881-363e787e6174",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eco",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d58593b-77ae-48c9-95f2-3bf15eba1dfe",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/datasnap/rest/TServerMethods/Eco/Gleryston Matos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"datasnap",
+						"rest",
+						"TServerMethods",
+						"Eco",
+						"Gleryston Matos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Soma",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc628f7b-ebe2-4f8d-8645-83e5e47056b1",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/datasnap/rest/TServerMethods/Soma/10/20",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"datasnap",
+						"rest",
+						"TServerMethods",
+						"Soma",
+						"10",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e63915e-40dd-4f6d-9bb2-6f68bc92aae8",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/datasnap/rest/TServerMethods/Usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"datasnap",
+						"rest",
+						"TServerMethods",
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e748929-7abd-4339-9869-3a4348c14f30",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gleryston\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/datasnap/rest/TServerMethods/Usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"datasnap",
+						"rest",
+						"TServerMethods",
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17b6b13b-452a-4637-9eeb-579c2a49cd77",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gleryston\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/datasnap/rest/TServerMethods/Usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"datasnap",
+						"rest",
+						"TServerMethods",
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "469bb883-c6e1-4e7e-8472-973c51d561ca",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/datasnap/rest/TServerMethods/Usuario/Gleryston",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"datasnap",
+						"rest",
+						"TServerMethods",
+						"Usuario",
+						"Gleryston"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

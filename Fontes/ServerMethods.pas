@@ -11,15 +11,12 @@ type
   private
     procedure ConfigurarReader;
   public
-    function HelloWorld: TJSONObject;
-    function ServerTime: TJSONObject;
-    function EchoString(Value: string): TJSONObject;
-    function ReverseString(Value: string): TJSONObject;
+    function Eco(Value: string): TJSONObject;
     function Soma(Value01: Integer; Value02: Integer): TJSONObject;
     function Usuario: TJSONArray; //Get = Select
-    function AcceptUsuario(const usuario: TJSONObject): TJSONObject; //Put = Update
-    function UpdateUsuario(const usuario: TJSONObject): TJSONObject; //Post = Insert
-    function CancelUsuario(const aNome: string): TJSONObject; //Delete = Delete
+    function AcceptUsuario(const Dados: TJSONObject): TJSONObject; //Put = Update
+    function UpdateUsuario(const Dados: TJSONObject): TJSONObject; //Post = Insert
+    function CancelUsuario(const Nome: string): TJSONObject; //Delete = Delete
   end;
 {$METHODINFO OFF}
 
@@ -33,43 +30,13 @@ begin
   ContentType := 'application/json';
 end;
 
-function TServerMethods.HelloWorld: TJSONObject;
-var
-  objeto: TJSONObject;
-begin
-  ConfigurarReader;
-  objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('result', 'Hello World'));
-  Result := objeto;
-end;
-
-function TServerMethods.ServerTime: TJSONObject;
-var
-  objeto: TJSONObject;
-begin
-  ConfigurarReader;
-  objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('result', FormatDateTime('dd-mm-yyyy hh:mm:ss', Now)));
-  Result := objeto;
-end;
-
-function TServerMethods.EchoString(Value: string): TJSONObject;
+function TServerMethods.Eco(Value: string): TJSONObject;
 var
   objeto: TJSONObject;
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
   objeto.AddPair(TJSONPair.Create('result', Value));
-  Result := objeto;
-end;
-
-function TServerMethods.ReverseString(Value: string): TJSONObject;
-var
-  objeto: TJSONObject;
-begin
-  ConfigurarReader;
-  objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('result', System.StrUtils.ReverseString(Value)));
   Result := objeto;
 end;
 
@@ -111,41 +78,55 @@ begin
   Result := lista;
 end;
 
-function TServerMethods.AcceptUsuario(const usuario: TJSONObject): TJSONObject;
+function TServerMethods.AcceptUsuario(const Dados: TJSONObject): TJSONObject;
 var
+  senha: string;
+  usuario: string;
   objeto: TJSONObject;
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
-  if (not usuario.GetValue('nome').Null) then
-    objeto.AddPair(TJSONPair.Create('nome', usuario.GetValue('nome').value));
-  if (not usuario.GetValue('senha').Null) then
-    objeto.AddPair(TJSONPair.Create('senha', usuario.GetValue('senha').value));
-  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário atualizado com sucesso'));
+
+  usuario := '';
+  if (not Dados.GetValue('nome').Null) then
+    usuario := Dados.GetValue('nome').Value;
+
+  senha := '';
+  if (not Dados.GetValue('senha').Null) then
+    senha := Dados.GetValue('senha').Value;
+
+  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário ' + usuario + ' com a senha ' + senha + ', foi atualizado com sucesso'));
   Result := objeto;
 end;
 
-function TServerMethods.UpdateUsuario(const usuario: TJSONObject): TJSONObject;
+function TServerMethods.UpdateUsuario(const Dados: TJSONObject): TJSONObject;
 var
+  senha: string;
+  usuario: string;
   objeto: TJSONObject;
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
-  if (not usuario.GetValue('nome').Null) then
-    objeto.AddPair(TJSONPair.Create('nome', usuario.GetValue('nome').value));
-  if (not usuario.GetValue('senha').Null) then
-    objeto.AddPair(TJSONPair.Create('senha', usuario.GetValue('senha').value));
-  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário criado com sucesso'));
+
+  usuario := '';
+  if (not Dados.GetValue('nome').Null) then
+    usuario := Dados.GetValue('nome').Value;
+
+  senha := '';
+  if (not Dados.GetValue('senha').Null) then
+    senha := Dados.GetValue('senha').Value;
+
+  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário ' + usuario + ' com a senha ' + senha + ', foi criado com sucesso'));
   Result := objeto;
 end;
 
-function TServerMethods.CancelUsuario(const aNome: string): TJSONObject;
+function TServerMethods.CancelUsuario(const Nome: string): TJSONObject;
 var
   objeto: TJSONObject;
 begin
   ConfigurarReader;
   objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário ' + aNome + ' excluído com sucesso'));
+  objeto.AddPair(TJSONPair.Create('mensagem', 'Usuário ' + Nome + ' excluído com sucesso'));
   Result := objeto;
 end;
 
