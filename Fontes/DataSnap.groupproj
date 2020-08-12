@@ -3,6 +3,9 @@
         <ProjectGuid>{12DA4405-777C-41CC-B440-0CDBE3602224}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="Aplicacao.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="ISAPI.dproj">
             <Dependencies/>
         </Projects>
@@ -14,6 +17,15 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="Aplicacao">
+        <MSBuild Projects="Aplicacao.dproj"/>
+    </Target>
+    <Target Name="Aplicacao:Clean">
+        <MSBuild Projects="Aplicacao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Aplicacao:Make">
+        <MSBuild Projects="Aplicacao.dproj" Targets="Make"/>
+    </Target>
     <Target Name="ISAPI">
         <MSBuild Projects="ISAPI.dproj"/>
     </Target>
@@ -24,13 +36,13 @@
         <MSBuild Projects="ISAPI.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="ISAPI"/>
+        <CallTarget Targets="Aplicacao;ISAPI"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ISAPI:Clean"/>
+        <CallTarget Targets="Aplicacao:Clean;ISAPI:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ISAPI:Make"/>
+        <CallTarget Targets="Aplicacao:Make;ISAPI:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
