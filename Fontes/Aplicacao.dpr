@@ -8,7 +8,8 @@ uses
   Web.WebReq,
   IdHTTPWebBrokerBridge,
   uServer in 'uServer.pas' {frmServer},
-  WebModule in 'WebModule.pas' {WebModuleServer: TWebModule};
+  WebModule in 'WebModule.pas' {WebModuleServer: TWebModule},
+  ServerMethods in 'ServerMethods.pas';
 
 {$R *.res}
 
